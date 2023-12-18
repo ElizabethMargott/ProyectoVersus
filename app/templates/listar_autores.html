@@ -6,7 +6,7 @@
 
     <h1>Lista de Autores para {{ autor.nombre }}</h1>
     <ul>
-      {% for autor in autors %}
+      {% for autor in autores %}
         <li>{{ autor.nombre }} - {{ autor.apellido }} - {{autor.nacionalidad}}</li>
       {% empty %}
         <p>No hay libros disponibles en este proyecto.</p>

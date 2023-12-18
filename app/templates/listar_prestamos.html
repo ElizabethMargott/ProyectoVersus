@@ -4,7 +4,7 @@
 
 <div class="container">
 
-    <h1>Lista de Estudiantes para {{ prestamo.nombre }}</h1>
+    <h1>Lista de Prestamo para {{ prestamo.nombre }}</h1>
     <ul>
       {% for prestamo in prestamo %}
         <li>{{ prestamo.libro }} - {{ prestamo.estudiante }} - {{prestamo.fecha_prestamo }} - {{prestamo.fecha_devolucion}}</li>
