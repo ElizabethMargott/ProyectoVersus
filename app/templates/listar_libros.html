@@ -6,7 +6,7 @@
 
         <h1>Lista de Libros para {{ libro.nombre }}</h1>
         <ul>
-          {% flibro libros %}
+          {% for libro in libros %}
             <li>{{libro.nombre }} - {{libro.paginas }}</li>
           {% empty %}
             <p>No hay libros disponibles en este proyecto.</p>
