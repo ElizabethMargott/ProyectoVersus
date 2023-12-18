@@ -1,19 +1,32 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
-    <div class="container">
-
-        <h1>Lista de Libros para {{ libro.nombre }}</h1>
-        <ul>
-          {% for libro in libros %}
-            <li>{{libro.nombre }} - {{libro.paginas }}</li>
-          {% empty %}
+<div class="container">
+    <h1>Lista de Libros</h1>
+    <div class="row mt-4">
+        {% for libro in libros %}
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <a href="">
+                    <img class="card-img-top img-fluid" style="object-fit: cover; height: 300px;" src="/media/{{ libro.image }}" alt="{{ libro.image }}">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title ">{{ libro.nombre }}</h5>
+                    <p class="card-text"><strong>Páginas:</strong> <span class="text-success">{{ libro.paginas }} pag.</span></p>
+                    <p class="card-text"><strong>Editorial:</strong> <span class="text-primary">{{ libro.editorial }}</span></p>
+                    <p class="card-text"><strong>Autor:</strong> <span class="text-info">{{ libro.autor }}</span></p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col">
             <p>No hay libros disponibles en este proyecto.</p>
-          {% endfor %}
-        </ul>
-        <a href="{% url 'crear_libro'%}">Crear Nuevo libro</a>
-    
+        </div>
+        {% endfor %}
     </div>
-
+    <a href="{% url 'crear_libros' %}" class="btn btn-primary">Crear Nuevo libro</a>
+</div>
 {% endblock %}
