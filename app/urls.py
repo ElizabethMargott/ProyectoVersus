@@ -4,14 +4,16 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.home, name="home"),
-    # path('example/', views.listar_example, name='example'),
-    # path('example/create/', views.crear_example, name='crear_example'),
-    # path('example/<int:example_id>/', views.detalle_example, name='detalle_pexample'),
-    # path('example/<int:example_id>/editar/', views.editar_example, name='editar_example'),
-    # path('example/<int:example_id>/eliminar/', views.eliminar_example, name='eliminar_example'),
-    path('example/create/', name='crear_proyecto'),
-
+    path('libros', views.listar_libros, name="listar_libros"),
+    path('crear_libros/', views.crear_libros, name='crear_libros'),
+    path('libros/<int:pk>/', views.detalles_libros, name='detalles_libros'),
+    path('libros/<int:pk>/editar/', views.editar_libros, name='editar_libros'),
+    path('libros/<int:pk>/eliminar/', views.eliminar_libros, name='eliminar_libros'),
+    path('autores', views.listar_autores, name="listar_autores"),
+    path('crear_autores/', views.crear_autores, name='crear_autores'),
+    path('autores/<int:pk>/', views.detalles_autores, name='detalles_autores'),
+    path('autores/<int:pk>/editar/', views.editar_autores, name='editar_autores'),
+    path('autores/<int:pk>/eliminar/', views.eliminar_autores, name='eliminar_autores'),
 ]
 
 if settings.DEBUG:
