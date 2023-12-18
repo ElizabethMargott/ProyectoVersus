@@ -3,17 +3,46 @@
 {% block content %}
 
 <div class="container">
+    <h1 class="text-center my-4">Prestamos</h1>
 
-    <h1>Lista de Estudiantes para {{ prestamo.nombre }}</h1>
-    <ul>
-      {% for prestamo in prestamo %}
-        <li>{{ prestamo.libro }} - {{ prestamo.estudiante }} - {{prestamo.fecha_prestamo }} - {{prestamo.fecha_devolucion}}</li>
-      {% empty %}
-        <p>No hay prestamos disponibles en este proyecto.</p>
-      {% endfor %}
-    </ul>
-    <a href="{% url 'crear_prestamo' %}">Crear Nuevo prestamo</a>
-    
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-info">
+                        <tr class="text-center">
+                            <th scope="col">Libro</th>
+                            <th scope="col">Estudiante</th>
+                            <th scope="col">Fecha prestamo</th>
+                            <th scope="col">Fecha devolución</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for prestamo in prestamos %}
+                        <tr>
+                            <td class="align-middle">{{ prestamo.libro }}</td>
+                            <td class="align-middle">{{ prestamo.estudiante }}</td>
+                            <td class="align-middle">{{ prestamo.fecha_prestamo }}</td>
+                            <td class="align-middle">{{ prestamo.fecha_devolucion }}</td>
+                            <td class="align-middle text-center">
+                                <a href="" class="btn btn-danger btn-sm me-1">Eliminar</a>
+                                <a href="" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" class="text-center">No hay préstamos disponibles en este proyecto.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-4">
+                <a href="{% url 'crear_prestamo' %}" class="btn btn-success btn-block">Crear Nuevo Prestamo</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
