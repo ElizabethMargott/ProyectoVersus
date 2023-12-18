@@ -2,4 +2,8 @@ from django.contrib import admin
 from .models import *
 
 # Register your models here.
-# admin.site.register(ModelExample)
+admin.site.register(Autor)
+admin.site.register(Editorial)
+admin.site.register(Libro)
+admin.site.register(Estudiante)
+admin.site.register(Prestamo)
