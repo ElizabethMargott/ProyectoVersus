@@ -25,8 +25,8 @@
                             <td class="align-middle">{{ autor.apellido }}</td>
                             <td class="align-middle">{{autor.nacionalidad}}</td>
                             <td class="align-middle text-center">
-                                <a href="" class="btn btn-danger btn-sm me-1">Eliminar</a>
-                                <a href="" class="btn btn-primary btn-sm">Editar</a>
+                                <a href="{% url 'eliminar_autor' pk=autor.id %}" class="btn btn-danger btn-sm me-1">Eliminar</a>
+                                <a href="{% url 'editar_autor' pk=autor.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>
                         </tr>
                         {% empty %}
