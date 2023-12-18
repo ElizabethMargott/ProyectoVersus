@@ -10,6 +10,8 @@ urlpatterns = [
     # path('example/<int:example_id>/', views.detalle_example, name='detalle_pexample'),
     # path('example/<int:example_id>/editar/', views.editar_example, name='editar_example'),
     # path('example/<int:example_id>/eliminar/', views.eliminar_example, name='eliminar_example'),
+    path('example/create/', name='crear_proyecto'),
+
 ]
 
 if settings.DEBUG:
