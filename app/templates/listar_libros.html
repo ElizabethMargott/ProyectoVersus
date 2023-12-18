@@ -2,18 +2,18 @@
 
 {% block content %}
 
-    <div class="container">
+<div class="container">
 
-        <h1>Lista de Libros para {{ libro.nombre }}</h1>
-        <ul>
-          {% flibro libros %}
-            <li>{{libro.nombre }} - {{libro.paginas }}</li>
-          {% empty %}
-            <p>No hay libros disponibles en este proyecto.</p>
-          {% endfor %}
-        </ul>
-        <a href="{% url 'crear_libro'%}">Crear Nuevo libro</a>
+    <h1>Lista de Libros para {{ libro.nombre }}</h1>
+    <ul>
+      {% for libro in libros %}
+        <li>{{ libro.nombre }} - {{ libro.paginas }}</li>
+      {% empty %}
+        <p>No hay libros disponibles en este proyecto.</p>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'crear_libros' %}">Crear Nuevo libro</a>
     
-    </div>
+</div>
 
 {% endblock %}
