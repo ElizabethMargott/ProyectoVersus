@@ -3,8 +3,7 @@
 {% block content %}
 
 <div class="container">
-    <h1 class="text-center my-4">Prestamos</h1>
-
+    <h1 class="text-center my-4">Préstamos</h1>
     <div class="row justify-content-center">
         <div class="col-lg-10">
             <div class="table-responsive">
@@ -13,8 +12,8 @@
                         <tr class="text-center">
                             <th scope="col">Libro</th>
                             <th scope="col">Estudiante</th>
-                            <th scope="col">Fecha prestamo</th>
-                            <th scope="col">Fecha devolución</th>
+                            <th scope="col">Fecha de Préstamo</th>
+                            <th scope="col">Fecha de Devolución</th>
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -26,20 +25,20 @@
                             <td class="align-middle">{{ prestamo.fecha_prestamo }}</td>
                             <td class="align-middle">{{ prestamo.fecha_devolucion }}</td>
                             <td class="align-middle text-center">
-                                <a href="" class="btn btn-danger btn-sm me-1">Eliminar</a>
-                                <a href="" class="btn btn-primary btn-sm">Editar</a>
+                                <a href="{% url 'eliminar_prestamo' pk=prestamo.id %}" class="btn btn-danger btn-sm me-1">Eliminar</a>
+                                <a href="{% url 'editar_prestamo' pk=prestamo.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>
                         </tr>
                         {% empty %}
                         <tr>
-                            <td colspan="5" class="text-center">No hay préstamos disponibles en este proyecto.</td>
+                            <td colspan="5" class="align-middle text-center">No hay préstamos disponibles.</td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
             </div>
             <div class="mt-4">
-                <a href="{% url 'crear_prestamo' %}" class="btn btn-success btn-block">Crear Nuevo Prestamo</a>
+                <a href="{% url 'crear_prestamo' %}" class="btn btn-success">Crear Nuevo Préstamo</a>
             </div>
         </div>
     </div>
