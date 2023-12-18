@@ -40,16 +40,6 @@
             </div>
         </div>
     </div>
-    <h1>Lista de Autores para {{ autor.nombre }}</h1>
-    <ul>
-      {% for autor in autors %}
-        <li>{{ autor.nombre }} - {{ autor.apellido }} - {{autor.nacionalidad}}</li>
-      {% empty %}
-        <p>No hay libros disponibles en este proyecto.</p>
-      {% endfor %}
-    </ul>
-    <a href="{% url 'crear_autores' %}">Crear Nuevo autor</a>
-
 </div>
 
 {% endblock %}
