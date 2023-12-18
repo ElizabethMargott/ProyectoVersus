@@ -10,13 +10,13 @@ urlpatterns = [
     path('libros/<int:pk>/editar/', views.editar_libros, name='editar_libro'),
     path('libros/<int:pk>/eliminar/', views.eliminar_libros, name='eliminar_libro'),
     
-    path('autores', views.listar_autores, name="listar_autores"),
+    path('autores/', views.listar_autores, name="listar_autores"),
     path('autores/crear/', views.crear_autores, name='crear_autor'),
     path('autores/<int:pk>/', views.detalles_autores, name='detalles_autor'),
     path('autores/<int:pk>/editar/', views.editar_autores, name='editar_autores'),
     path('autores/<int:pk>/eliminar/', views.eliminar_autores, name='eliminar_autor'),
 
-    path('editoriales', views.listar_editoriales, name="listar_editoriales"),
+    path('editoriales/', views.listar_editoriales, name="listar_editoriales"),
     path('editoriales/crear/', views.crear_editoriales, name='crear_editorial'),
     path('editoriales/<int:pk>/', views.detalles_editoriales, name='detalles_editorial'),
     path('editoriales/<int:pk>/editar/', views.editar_editoriales, name='editar_editorial'),

@@ -4,16 +4,43 @@
 
 <div class="container">
 
-    <h1>Lista de Estudiantes para {{ estudiante.nombre }}</h1>
-    <ul>
-      {% for estudiante in estudiantes %}
-        <li>{{ estudiante.nombre }} - {{ estudiante.apellido }} - {{estudiante.codigo_estudiante}}</li>
-      {% empty %}
-        <p>No hay estudiantes disponibles en este proyecto.</p>
-      {% endfor %}
-    </ul>
-    <a href="{% url 'crear_estudiantes' %}">Crear Nuevo estudiante</a>
-    
+    <h1 class="text-center my-4">Estudiantes</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-info ">
+                        <tr class="text-center">
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Código de Estudiante</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for estudiante in estudiantes %}
+                        <tr>
+                            <td class="align-middle">{{ estudiante.nombre }}</td>
+                            <td class="align-middle">{{ estudiante.apellido }}</td>
+                            <td class="align-middle">{{estudiante.codigo_estudiante}}</td>
+                            <td class="align-middle text-center">
+                                <a href="" class="btn btn-danger btn-sm me-1">Eliminar</a>
+                                <a href="" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <td class="align-middle">No hay libros disponibles en este proyecto.</td>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-4">
+                <a href="{% url 'crear_estudiante' %}" class="btn btn-success btn-block">Crear Nuevo estudiante</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
